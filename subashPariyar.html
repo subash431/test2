@@ -15,17 +15,17 @@
 
   <script language="javascript">
     function generateTable() {
-      var rows = document.getElementById("t1").value;
-      var cols = document.getElementById("t2").value;
+      var numRows = document.getElementById("t1").value;
+      var numCols = document.getElementById("t2").value;
       var html =
         '<table style="border-collapse: collapse; width: 50%; border: 2px solid black;">';
 
-      for (var i = 0; i < rows; i++) {
+      for (var i = 0; i < numRows; i++) {
         html +=
           '<tr style="background-color: ' +
-          (i % 2 === 0 ? "#f2f2f2" : "white") +
+          (i % 2 === 0 ? "#bbbbb" : "white") +
           ';">';
-        for (var j = 0; j < cols; j++) {
+        for (var j = 0; j < numCols; j++) {
           html +=
             '<td style="border: 1px solid black; padding: 8px; text-align: center;">' +
             i +
@@ -58,11 +58,11 @@
 
     function addRow() {
       var table = document.querySelector("table");
-      var cols = table.rows[0].cells.length; // Getting the number of columns from the first row
-      var numRows = table.rows.length; // Getting the current number of rows in the table
+      var numCols = table.rows[0].cells.length;
+      var numRows = table.rows.length;
       var newRow = document.createElement("tr");
 
-      for (var i = 0; i < cols; i++) {
+      for (var i = 0; i < numCols; i++) {
         var newCell = document.createElement("td");
         newCell.style.border = "1px solid black";
         newCell.style.textAlign = "center";
